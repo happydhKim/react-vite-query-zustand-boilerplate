@@ -3,16 +3,7 @@ import useMain from 'hooks/useMain';
 import type { FC } from 'react';
 
 const Main: FC = () => {
-  const { 
-    firstLoading,
-    secondLoading,
-    thirdLoading,
-    fourthLoading,
-    first,
-    second,
-    third,
-    fourth,
-  } = useMain();
+  const { firstLoading, secondLoading, thirdLoading, fourthLoading, first, second, third, fourth } = useMain();
 
   return (
     <>

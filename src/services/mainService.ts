@@ -8,22 +8,22 @@ interface ResponseTypes {
 export interface FirstResponse extends ResponseTypes {
   depth: number;
   description: string;
-};
+}
 
 export interface SecondResponse extends ResponseTypes {
   depth: number;
   description: string;
-};
+}
 
 export interface ThirdResponse extends ResponseTypes {
   depth: number;
   description: string;
-};
+}
 
 export interface FourthResponse extends ResponseTypes {
   depth: number;
   description: string;
-};
+}
 
 const getFirst = async () => {
   const response = await apiService.get<FirstResponse>('/first');
@@ -45,9 +45,4 @@ const getFourth = async (depth: number) => {
   return response.data;
 };
 
-export {
-  getFirst,
-  getSecond,
-  getThird,
-  getFourth,
-};
+export { getFirst, getSecond, getThird, getFourth };
