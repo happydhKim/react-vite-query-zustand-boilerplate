@@ -5,9 +5,7 @@ import type { FC } from 'react';
 const Login: FC = () => {
   return (
     <>
-      <div>
-        login form
-      </div>
+      <div>login form</div>
     </>
   );
 };
