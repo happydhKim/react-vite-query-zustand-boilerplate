@@ -1,16 +1,16 @@
 import { memo } from 'react';
-import { useQuery } from 'react-query'
+import { useQuery } from '@tanstack/react-query';
 import { css } from '@emotion/react';
 
 import type { FC } from 'react';
 
+const QUERY_KEY_REPO_DATA = 'repoData';
+
 const Header: FC = () => {
-  const { isLoading, error, data } = useQuery('repoData', () =>
-     fetch('https://api.github.com/repos/tannerlinsley/react-query').then(res =>
-       res.json()
-     ),
-   )
- 
+  const { isLoading, error, data } = useQuery([QUERY_KEY_REPO_DATA], () =>
+    fetch('https://api.github.com/repos/tannerlinsley/react-query').then((res) => res.json())
+  );
+
   console.log(isLoading, error, data);
   return (
     <header
@@ -32,9 +32,7 @@ const Header: FC = () => {
       >
         Title 🐝
       </strong>
-      <span>
-        로그인
-      </span>
+      <span>로그인</span>
     </header>
   );
 };

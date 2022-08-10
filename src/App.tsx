@@ -1,6 +1,5 @@
 import normalize from 'emotion-normalize';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { RecoilRoot } from 'recoil';
 import { css, Global } from '@emotion/react';
 import Routes from 'pages/Routes';
 
@@ -26,9 +25,7 @@ const App = () => {
         `}
       />
       <QueryClientProvider client={queryClient}>
-        <RecoilRoot>
-          <Routes />
-        </RecoilRoot>
+        <Routes />
       </QueryClientProvider>
     </>
   );
