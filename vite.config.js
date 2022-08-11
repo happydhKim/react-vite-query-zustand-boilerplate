@@ -1,24 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import svgrPlugin from 'vite-plugin-svgr';
-import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   // This changes the out put dir from dist to build
   // comment this out if that isn't relevant for your project
-  resolve: {
-    alias: {
-      'pages': path.resolve(path.resolve(__dirname, './src/pages/')),
-      'components': path.resolve(path.resolve(__dirname, './src/components/')),
-      'constants': path.resolve(path.resolve(__dirname, './src/constants/')),
-      'styles': path.resolve(path.resolve(__dirname, './src/styles/')),
-      'services': path.resolve(path.resolve(__dirname, './src/services/')),
-      'utils': path.resolve(path.resolve(__dirname, './src/utils/')),
-      'hooks': path.resolve(path.resolve(__dirname, './src/hooks/')),
-      'layouts': path.resolve(path.resolve(__dirname, './src/layouts/')),
-    },
-  },
   build: {
     outDir: 'build',
     sourcemap: true,
@@ -34,6 +22,7 @@ export default defineConfig({
         plugins: ['@emotion/babel-plugin'],
       },
     }),
+    tsconfigPaths(),
     svgrPlugin({
       svgrOptions: {
         icon: true,
