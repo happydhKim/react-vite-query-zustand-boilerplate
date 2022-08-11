@@ -20,14 +20,16 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react"
+    "jsxImportSource": "@emotion/react",
+    "types": ["vite-plugin-svgr/client"]
   },
-  "include": ["src", "public/mockServiceWorker.js"],
+  "include": ["src", "public/mockServiceWorker.js", "vite.config.ts"],
   "paths": {
     "pages/*": ["pages/*"],
     "components/*": ["components/*"],
     "constants/*": ["constants/*"],
     "styles/*": ["styles/*"],
+    "services/*": ["services/*"],
     "utils/*": ["utils/*"],
     "hooks/*": ["hooks/*"],
     "layouts/*": ["layouts/*"]
