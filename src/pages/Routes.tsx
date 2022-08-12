@@ -5,6 +5,7 @@ import { AppLayout } from 'layouts';
 import type { FC } from 'react';
 
 const Main = lazy(() => import('pages/Main'));
+const Calculator = lazy(() => import('pages/Calculator'));
 const NotFound = lazy(() => import('pages/NotFound'));
 
 const Routes: FC = () => {
@@ -14,6 +15,7 @@ const Routes: FC = () => {
         <AppLayout>
           <ReactRoutes>
             <Route path="/" element={<Main />} />
+            <Route path="/calculator" element={<Calculator />} />
             <Route path="*" element={<NotFound />} />
           </ReactRoutes>
         </AppLayout>

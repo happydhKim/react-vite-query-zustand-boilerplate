@@ -29,6 +29,7 @@
     "components/*": ["components/*"],
     "constants/*": ["constants/*"],
     "styles/*": ["styles/*"],
+    "stores/*": ["stores/*"],
     "services/*": ["services/*"],
     "utils/*": ["utils/*"],
     "hooks/*": ["hooks/*"],
