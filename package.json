@@ -27,6 +27,7 @@
     "@babel/preset-typescript": "^7.16.7",
     "@emotion/babel-plugin": "^11.7.2",
     "@emotion/eslint-plugin": "^11.7.0",
+    "@rollup/plugin-eslint": "^8.0.2",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
