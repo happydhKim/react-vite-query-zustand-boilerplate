@@ -3,7 +3,7 @@ import create from 'zustand';
 interface countState {
   count: number;
   increase: (by: number) => void;
-};
+}
 
 const useCalculatorStore = create<countState>()((set) => ({
   count: 1,
