@@ -5,7 +5,8 @@ import type { FC } from 'react';
 import type { ButtonProps } from './types';
 
 const Button: FC<ButtonProps> = (props) => {
-  const {color, size, children, disabled, onClick} = props;
+  const { color, size, children, disabled, onClick } = props;
+  
   return (
     <button
       disabled={disabled}
@@ -17,7 +18,7 @@ const Button: FC<ButtonProps> = (props) => {
         text-align: center;
         border: 1px solid #ffde4d;
         border-radius: 5px;
-        background-color: #FBCA04;
+        background-color: #fbca04;
         color: #191f28;
         padding: 0 10px;
         &:hover {
