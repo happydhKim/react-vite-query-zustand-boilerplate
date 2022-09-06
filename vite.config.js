@@ -12,9 +12,12 @@ export default defineConfig({
     outDir: 'build',
     sourcemap: true,
   },
+  server: {
+    open: 'http://localhost:5173/',
+  },
   esbuild: {
     //https://github.com/vitejs/vite/issues/8644#issuecomment-1159308803
-    logOverride: { 'this-is-undefined-in-esm': 'silent' }
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
   },
   plugins: [
     { ...eslint({ include: 'src/**/*+(ts|tsx)' }), enforce: 'pre' },
