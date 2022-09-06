@@ -1,6 +1,9 @@
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { serviceWorker } from './server/browser';
+
+serviceWorker.start({ onUnhandledRequest: 'bypass' });
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
