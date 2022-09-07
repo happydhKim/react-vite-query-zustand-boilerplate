@@ -7,7 +7,7 @@ const useMain = () => {
     data: first,
     isError,
     error,
-  } = useQuery(['first'], async () => getFirst(), {
+  } = useQuery(['first'], () => getFirst(), {
     retry: 10,
     onError: (err) => {
       console.error(err);
@@ -15,7 +15,7 @@ const useMain = () => {
   });
   const { isLoading: secondLoading, data: second } = useQuery(
     ['second', first],
-    async () => (first ? getSecond(first.depth) : null),
+    () => (first ? getSecond(first.depth) : null),
     {
       enabled: !!first,
       retry: 10,
@@ -26,12 +26,12 @@ const useMain = () => {
   );
   const { isLoading: thirdLoading, data: third } = useQuery(
     ['third', second],
-    async () => (second ? getThird(second.depth) : null),
+    () => (second ? getThird(second.depth) : null),
     { enabled: !!second, retry: 10 }
   );
   const { isLoading: fourthLoading, data: fourth } = useQuery(
     ['fourth', third],
-    async () => (third ? getFourth(third.depth) : null),
+    () => (third ? getFourth(third.depth) : null),
     { enabled: !!third, retry: 10 }
   );
   console.log(isError, error);
