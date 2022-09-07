@@ -77,13 +77,11 @@ const getFourthInfo: Parameters<typeof rest.get>[1] = async (req, res, ctx) => {
 
 const getItemDetailInformation: Parameters<typeof rest.get>[1] = async (req, res, ctx) => {
   await sleep(1000);
-  return Math.random() < 0.5
-    ? res(
-        ctx.status(200),
-        ctx.json({
-          code: req,
-          detailInformation: `이 상품은..${req}`,
-        })
-      )
-    : res(ctx.status(500));
+  return res(
+    ctx.status(200),
+    ctx.json({
+      code: req,
+      detailInformation: `이 상품은..${req}`,
+    })
+  );
 };
