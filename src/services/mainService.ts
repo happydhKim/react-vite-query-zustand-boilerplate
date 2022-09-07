@@ -25,6 +25,11 @@ export interface FourthResponse extends ResponseTypes {
   description: string;
 }
 
+export interface ItemDetailInformation extends ResponseTypes {
+  code: number;
+  detailInformation: string;
+}
+
 const getFirst = async () => {
   const response = await apiService.get<FirstResponse>('/first');
   return response.data;
@@ -45,4 +50,9 @@ const getFourth = async (depth: number) => {
   return response.data;
 };
 
-export { getFirst, getSecond, getThird, getFourth };
+const getItemDetailInformation = async (code: number) => {
+  const response = await apiService.get<ItemDetailInformation>(`/detail?code=${code}`);
+  return response.data;
+};
+
+export { getFirst, getSecond, getThird, getFourth, getItemDetailInformation };

@@ -7,6 +7,7 @@ export const handlers = () => {
     rest.get('/api/second', getSecondInfo),
     rest.get('/api/third', getThirdInfo),
     rest.get('/api/fourth', getFourthInfo),
+    rest.get('/api/detail', getItemDetailInformation),
   ];
 };
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -72,4 +73,15 @@ const getFourthInfo: Parameters<typeof rest.get>[1] = async (req, res, ctx) => {
         })
       )
     : res(ctx.status(500));
+};
+
+const getItemDetailInformation: Parameters<typeof rest.get>[1] = async (req, res, ctx) => {
+  await sleep(1000);
+  return res(
+    ctx.status(200),
+    ctx.json({
+      code: req,
+      detailInformation: `이 상품은..${req}`,
+    })
+  );
 };
